@@ -36,7 +36,6 @@ class Welcome extends Component {
    verifyUser(event){
     var that = this;
     event.preventDefault();
-    console.log('In method');
     let user_data = {
       email : this.state.loginValue,
       password : this.state.pwValue
