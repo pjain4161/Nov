@@ -1,0 +1,97 @@
+@font-face {
+   font-family: 'Avenir Next';
+   src: url("/fonts/AvenirNextLTPro-Regular.otf"); /* File to be stored at your site */
+   }
+   body{
+      font-family: 'Avenir Next';
+   }
+
+   .gcBlueText {
+  color: #015191;
+}
+.gcBold {
+  font-weight: 700;
+}
+.gcBlueBackground {
+  background-color: #015a9a !important;
+}
+
+.gcWhiteText {
+  color: white !important;
+  font-weight: 100;
+}
+
+.gcNoWrap {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical !important;
+}
+.gcLink {
+  color: initial !important;
+}
+.gcGreyText {
+  color: #515151;
+  font-weight: 100;
+}
+
+.gcMedGrey {
+  color: #515151;
+  font-weight: 400;
+}
+
+.gcStandardText {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.gcPageHeader {
+  color:#015a9a !important;
+  margin-top: 0px !important;
+  margin-bottom: 20px !important;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.gcButton {
+  text-transform: uppercase;
+  border-radius: 0px;
+  width: auto;
+  border: none;
+  padding: 7px;
+  text-align: center;
+}
+
+.gcSubHeading {
+  color:#515151;
+  font-size:18px !important;
+}
+
+.gcText {
+  color:#515151 !important;
+  font-size:14px;
+}
+
+.gcLightText {
+  font-weight:100 !important;
+}
+
+.blueButton,
+.blueButton:hover,
+.blueButton:active,
+.blueBUtton:focus {
+  color: white;
+  background-color: #015191;
+}
+
+.form-control {
+  background-color: #ececec !important;
+  border: none !important;
+  border-radius: 0px !important;
+}
+
+#root > div > div > .container {
+  padding: 0 !important;
+  width: 92vw !important;
+  height: calc(100vh - 70px - 4vw);
+}

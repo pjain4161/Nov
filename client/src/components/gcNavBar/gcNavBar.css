@@ -1,0 +1,61 @@
+.gcNavBar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-image: linear-gradient(to right, #00589d , #006ec4);
+  border: none;
+}
+
+
+.gcNavHeader {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.gcUserIcon {
+  margin-left: auto;
+  margin-right: 1rem;
+  align-self: center;
+}
+
+.gcWhite {
+  color:white !important;
+  font-size:16px;
+}
+
+.navbar-brand {
+  padding: 6px 15px !important;
+}
+
+.navbar-nav > li > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active,
+.navbar-nav > li > a:focus,
+.navbar-nav > li > a > .gcWhite,
+.navbar-nav > li > a > .gcWhite:hover,
+.navbar-nav > li > a > .gcWhite:active,
+.navbar-nav > li > a > .gcWhite:focus {
+  text-decoration: none !important;
+}
+
+.navbar-default .navbar-toggle {
+  border:none !important;
+}
+.navbar-default .navbar-toggle > span {
+  background-color:white !important;
+}
+.navbar-default .navbar-toggle > span:nth-of-type(3) {
+  width:70%;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:hover  {
+  background-color:transparent;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a{
+  color:white;
+}

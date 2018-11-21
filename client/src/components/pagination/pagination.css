@@ -1,0 +1,42 @@
+.btn-toolbar {
+  display: flex;
+  justify-content:center;
+  height:34px;
+  align-items:center;
+}
+.paginationButton {
+  margin-left:0px !important;
+}
+.paginationButton:focus,
+.paginationButton:active,
+.paginationButton:hover,
+.pageContainer > .paginationButton:hover,
+.pageContainer > .paginationButton:focus,
+.pageContainer > .paginationButton:active,
+.pageContainer > .paginationButton.active{
+  background-color:#015191;
+  color:white;
+}
+.pageContainer {
+  border:1px solid #ccc;
+  margin: 0 0.5rem;
+  border-radius:2rem;
+  display:flex;
+  align-items:center;
+  height:28px;
+}
+.paginationButton.arrow {
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  display:flex;
+  justify-content:center;
+}
+.paginationButton.arrow > .glyphicon {
+  top:0 !important;
+}
+.pageContainer > .paginationButton {
+  border:none;
+  background:transparent;
+  color:#ccc;
+}

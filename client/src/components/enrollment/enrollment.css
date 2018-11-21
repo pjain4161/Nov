@@ -1,0 +1,64 @@
+.enrollmentCard {
+  margin-top: 30px;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 10px lightgrey;
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+.checkbox > label {
+  color: #515151;
+  font-weight: 100;
+}
+
+.checkboxContainer {
+  position: relative;
+  padding-left: 15px;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  height: 20px;
+  width: 20px;
+  position: relative !important;
+  right: 15px;
+  top:4px;
+  z-index: 10;
+}
+
+input:checked ~ .checkmark {
+    background-color: #015191;
+}
+
+.checkmark {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
