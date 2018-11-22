@@ -13,7 +13,7 @@ import {
   Row,
   Col
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import "./enrollment.css";
 
@@ -78,7 +78,8 @@ class Enrollment extends Component {
       chk21:false,
       chk22:false,
       chk23:false,
-      enroll_error : ''
+      enroll_error : '',
+      redirect: 'false'
  };
   }
 
@@ -185,9 +186,13 @@ class Enrollment extends Component {
     .then(function(response){
          response.json()
           .then(function(data){
-            console.log(data);
+            console.log(data.status);
+            if(data.status == 'success'){
+              that.setState((state) =>({redirect: 'true'}));
+            } 
+            })
           })
-        })
+        
    }
   }
 
@@ -304,6 +309,10 @@ class Enrollment extends Component {
     this.setState({ checkValue: e.target.value });
   }
   render() {
+     const redirect = this.state.redirect;
+    if (redirect === 'true') {
+              return <Redirect to='/benefits'/>;
+    } 
     return (
       <div>
         <h4 className="gcPageHeader gcBlueText">Benefit Enrollment</h4>
