@@ -187,5 +187,48 @@ app.post("/api/benefits", function(req, res) {
   });
 });
 
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+app.post("/api/enroll", function(req, res) {
+    var enroll_id = getRandomInt(100000);
+    pool.connect((err, db, done) => {
+        if (err) {
+            // return console.log(err);
+        } else {
+            //for insertion
+            const enroll_query = 'INSERT INTO salesforceonegc.onegc_benefit_enrollment (id, territory, age, marital_status, income_low, employment_situation, health_situation, i_am) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id'
+            const values = [enroll_id, req.body.province, req.body.ageValue, req.body.maritalValue, req.body.incomeValue, req.body.employmentValue, req.body.healthValue, req.body.checkValue]
+
+            db.query(enroll_query, values, (err, res) => {
+                if (err) {
+                    // console.log(err.stack)
+                } else {
+                    // console.log(res.rows[0]);
+                    setTimeout(function update_status() {
+                        //for updation
+                        const enroll_query_upd = 'UPDATE salesforceonegc.onegc_benefit_enrollment SET status=($1) WHERE id=($2)'
+                        const values = ['Approved', enroll_id]
+                        db.query(enroll_query_upd, values, (err, res) => {
+                            if (err) {
+                                return 'error';
+                            } else {
+                                console.log('success');
+                            }
+                        });
+                    }, 5000);
+
+                }
+            });
+            res
+                .status(200)
+                .send({
+                    status: 'success'
+                });
+        }
+    })
+})
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log("Listening on port " + PORT));
